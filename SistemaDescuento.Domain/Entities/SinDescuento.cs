@@ -2,7 +2,7 @@
 
 namespace SistemaDescuento.Domain.Entities
 {
-    class SinDescuento : IDescuento
+    public class SinDescuento : IDescuento
     {
         public double CalcularDescuento(double precio)
         {
