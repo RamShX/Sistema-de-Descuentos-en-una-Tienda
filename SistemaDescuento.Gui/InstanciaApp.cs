@@ -7,12 +7,13 @@ namespace SistemaDescuento.Gui
 {
     public class InstanciaApp
     {
-        public void Funcionalidad() 
+        public void Funcionalidad()
         {
 
             bool exit = true;
-            while (exit) 
+            while (exit)
             {
+                Console.Clear();
                 Console.Write("Ingrese el precio del producto: ");
                 if (!double.TryParse(Console.ReadLine(), out double precio) || precio < 0)
                 {
@@ -32,7 +33,7 @@ namespace SistemaDescuento.Gui
                     continue;
                 }
 
-                if(tipoCliente == 4)
+                if (tipoCliente == 4)
                 {
                     exit = false;
                     continue;
@@ -45,7 +46,7 @@ namespace SistemaDescuento.Gui
                     case 1:
                         descuentoCliente = new DescuentoEstudiante();
                         productoCliente = new Producto(descuentoCliente);
-                        
+
                         break;
                     case 2:
                         descuentoCliente = new DescuentoPremiun();
@@ -63,5 +64,10 @@ namespace SistemaDescuento.Gui
                 {
                     Console.WriteLine($"El precio con descuento es: {productoCliente.AplicarDescuento(precio)}");
                 }
+
+                Console.WriteLine("Presione una tecla para continuar");
+                Console.ReadKey();
+            }
+        }
     }
 }
